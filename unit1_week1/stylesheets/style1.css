@@ -29,6 +29,6 @@ right:5px;
 */
 #topHeader{
 	background-color: maroon; 
-		text-align: center;
-
+	text-align: center;
+	border-radius: 20px;
 }
