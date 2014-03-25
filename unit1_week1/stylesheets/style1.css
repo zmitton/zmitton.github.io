@@ -1,55 +1,58 @@
-/*
-.item1
-{
-position:fixed;
-top:30px;
-right:5px;
+@media only screen and (min-width: 768px) {
+
+	#Column1{
+		position: absolute;
+		width: 350px;
+		background-color: #DDD; 
+		text-align: left;
+		border-radius: 10px;
+	
+	}
+	#profilePic img{
+		border-radius: 20px;
+		width: 300px;
+		
+	}
+	
+	
+	#Column2{
+		position: absolute;
+		margin-left: 360px;
+		max-width: 850px;
+		background-color: #DDD; 
+		text-align: left;
+		border-radius: 10px;
+	}
 }
 
-.item12
-{
-position:fixed;
-top:30px;
-right:5px;
-}
-
-.item3
-{
-position:fixed;
-top:30px;
-right:5px;
-}
-
-p item4
-{
-position:fixed;
-top:30px;
-right:5px;
-}
-*/
 #topHeader{
-	background-color: maroon; 
+	background-color: #DBB; 
 	text-align: center;
 	border-radius: 10px;
 }
 
 
-@media only screen and (min-width: 768px) {
-    /* tablets and desktop */
-	#headShot{
-		border-radius: 20px;
-		width: 400px;
-		
-	}
-
-}
 
 @media only screen and (max-width: 767px) {
-    /* tablets and desktop */
-	#headShot{
+    /* mobile */
+	#Column1{
+		background-color: #DDD; 
+		text-align: left;
+		border-radius: 10px;
+	
+	}
+	#profilePic img{
 		border-radius: 20px;
-		width: 200px;
+		width: 150px;
 		
+	}
+	
+	
+	#Column2{
+		max-width: 850px;
+		background-color: #DDD; 
+		text-align: left;
+		border-radius: 10px;
 	}
 
 }
