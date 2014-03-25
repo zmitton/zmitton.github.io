@@ -29,4 +29,9 @@ right:5px;
 */
 #topHeader{
 	background-color: maroon; 
+		text-align: center;
+
+}
+h1{
+	text-align: center;
 }
