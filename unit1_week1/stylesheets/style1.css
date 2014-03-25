@@ -30,5 +30,8 @@ right:5px;
 #topHeader{
 	background-color: maroon; 
 	text-align: center;
+	border-radius: 10px;
+}
+#profilePic{
 	border-radius: 20px;
 }
