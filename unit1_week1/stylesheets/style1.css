@@ -10,6 +10,7 @@
 	border-radius: 5px;
 }
 #externalLinks {
+	float: left;
 	background-color: #BBB;
 	border-radius: 10px;
 }
@@ -20,7 +21,7 @@
 }
 
 
-@media only screen and (min-width: 30em) {
+@media only screen and (min-width: 40em) {
 
 	#Column1{
 		position: absolute;
