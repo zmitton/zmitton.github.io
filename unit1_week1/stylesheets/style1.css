@@ -47,7 +47,6 @@
 
 
 
-@media only screen and (max-width: 60em) {
     /* mobile */
 	#Column1{
 		background-color: #DDD; 
@@ -66,5 +65,3 @@
 		background-color: #DDD; 
 		border-radius: 10px;
 	}
-
-}
