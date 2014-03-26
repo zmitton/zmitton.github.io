@@ -20,7 +20,7 @@
 }
 
 
-@media only screen and (min-width: 40.5em) {
+@media only screen and (min-width: 60em) {
 
 	#Column1{
 		position: absolute;
@@ -47,7 +47,7 @@
 
 
 
-@media only screen and (max-width: 40.5em) {
+@media only screen and (max-width: 60em) {
     /* mobile */
 	#Column1{
 		background-color: #DDD; 
