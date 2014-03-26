@@ -1,16 +1,37 @@
+
+#topHeader{
+	background-color: #DBB; 
+	text-align: center;
+	border-radius: 10px;
+}
+
+#externalLinks img{
+	width: 100px;
+	border-radius: 5px;
+}
+#externalLinks {
+	background-color: #BBB;
+	border-radius: 10px;
+}
+
+#bio {
+	background-color: #BBB;
+	border-radius: 10px;
+}
+
+
 @media only screen and (min-width: 768px) {
 
 	#Column1{
 		position: absolute;
 		width: 350px;
 		background-color: #DDD; 
-		text-align: left;
 		border-radius: 10px;
 	
 	}
 	#profilePic img{
-		border-radius: 20px;
 		width: 300px;
+		border-radius: 20px;
 		
 	}
 	
@@ -20,15 +41,8 @@
 		margin-left: 360px;
 		max-width: 850px;
 		background-color: #DDD; 
-		text-align: left;
 		border-radius: 10px;
 	}
-}
-
-#topHeader{
-	background-color: #DBB; 
-	text-align: center;
-	border-radius: 10px;
 }
 
 
@@ -37,13 +51,12 @@
     /* mobile */
 	#Column1{
 		background-color: #DDD; 
-		text-align: left;
 		border-radius: 10px;
 	
 	}
 	#profilePic img{
-		border-radius: 20px;
 		width: 150px;
+		border-radius: 20px;
 		
 	}
 	
@@ -51,7 +64,6 @@
 	#Column2{
 		max-width: 850px;
 		background-color: #DDD; 
-		text-align: left;
 		border-radius: 10px;
 	}
 
