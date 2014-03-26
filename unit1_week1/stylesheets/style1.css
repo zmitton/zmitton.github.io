@@ -32,11 +32,14 @@ body{
 
 }
 #profilePic img{
-	float: left;
-	width: 50px;
+	float: right;
+	width: 100px;
 	border-radius: 20px;
 	
 }
+#profilePic a{
+}
+
 
 #Column2{
 	background-color: #DDD; 
