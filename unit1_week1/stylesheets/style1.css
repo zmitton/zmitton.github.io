@@ -21,11 +21,11 @@
 }
 
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 35em) {
 
 	#Column1{
 		position: absolute;
-		width: 225px;
+		width: 200px;
 		background-color: #DDD; 
 		border-radius: 10px;
 	
@@ -39,7 +39,7 @@
 	
 	#Column2{
 		position: absolute;
-		margin-left: 235px;
+		margin-left: 210px;
 		max-width: 850px;
 		background-color: #DDD; 
 		border-radius: 10px;
