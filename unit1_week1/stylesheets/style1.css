@@ -5,15 +5,17 @@
 	border-radius: 10px;
 }
 
+#externalLinks {
+	background-color: #BBB;
+	border-radius: 10px;
+}
 #externalLinks img{
 	width: 100px;
 	border-radius: 5px;
 }
-#externalLinks {
-	float: left;
-	background-color: #BBB;
-	border-radius: 10px;
-}
+
+
+
 
 #bio {
 	background-color: #BBB;
@@ -33,7 +35,10 @@
 	#profilePic img{
 		width: 300px;
 		border-radius: 20px;
-		
+		display: block;
+		margin-top: 10px;
+		margin-left: auto;
+		margin-right: auto;		
 	}
 	
 	
