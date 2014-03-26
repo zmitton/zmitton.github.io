@@ -1,7 +1,8 @@
 body{
-	max-width: 1400px;
+	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 10px 10px 10px 10px;
 }
 
 #topHeader{
@@ -25,32 +26,28 @@ body{
 }
 
 
-    /* mobile */
-	#Column1{
-		background-color: #DDD; 
-		border-radius: 10px;
+#Column1{
+	background-color: #DDD; 
+	border-radius: 10px;
+
+}
+#profilePic img{
+	float: left;
+	width: 50px;
+	border-radius: 20px;
 	
-	}
-	#profilePic img{
-		float: left;
-		width: 50px;
-		border-radius: 20px;
-		
-	}
-	
-	
-	#Column2{
-		max-width: 850px;
-		background-color: #DDD; 
-		border-radius: 10px;
-	}
+}
+
+#Column2{
+	background-color: #DDD; 
+	border-radius: 10px;
+}
 
 
 
 
 
-
-/*big screens*/
+/*big screens override above css*/
 @media only screen and (min-width: 35em) {
 	#Column1{
 		position: absolute;
@@ -68,11 +65,11 @@ body{
 		margin-right: auto;		
 	}
 	
-	
 	#Column2{
 		position: absolute;
 		margin-left: 210px;
-		max-width: 850px;
+		margin-right: 10px;
+		max-width: 990px;
 		background-color: #DDD; 
 		border-radius: 10px;
 	}
