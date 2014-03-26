@@ -32,7 +32,7 @@ body{
 
 }
 #profilePic img{
-	float: right;
+	float: left;
 	width: 100px;
 	border-radius: 20px;
 	
