@@ -2,8 +2,9 @@ body{
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 0px 10px 10px 10px;
+	padding: 0px 2px 2px px;
 	background-color: #200;
+	font-size: 1.3em
 }
 
 #topHeader{
@@ -35,8 +36,7 @@ body{
 #profilePic img{
 	float: left;
 	width: 100px;
-	border-radius: 20px;
-	
+	border-radius: 20px;	
 }
 #profilePic a{
 }
@@ -50,11 +50,15 @@ body{
 
 
 
-
 /*big screens override above css*/
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: 40em) {
+	body{
+		padding: 0px 10px 10px 10px;
+
+	}
+
 	#Column1{
-		position: absolute;
+		position: fixed;
 		width: 200px;
 		background-color: #DDD; 
 		border-radius: 10px;
