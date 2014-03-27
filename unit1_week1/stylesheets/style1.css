@@ -14,7 +14,6 @@ body{
 }
 
 #externalLinks {
-	background-color: #BBB;
 	border-radius: 10px;
 }
 #externalLinks img{
@@ -23,23 +22,25 @@ body{
 }
 
 #bio {
-	background-color: #BBB;
 	border-radius: 10px;
 }
 
 
 #Column1{
-	background-color: #DDD; 
 	border-radius: 10px;
-
+	min-height: 100px
 }
+#Column1 a{
+	text-decoration:none;
+	color: #FFF;
+}
+
 #profilePic img{
 	float: left;
 	width: 100px;
-	border-radius: 20px;	
+	border-radius: 50px;	
 }
-#profilePic a{
-}
+
 
 
 #Column2{
@@ -47,6 +48,9 @@ body{
 	border-radius: 10px;
 }
 
+p, h1, h2, h3, h4, h5, h6, img{
+	margin: 3px 3px 3px 3px;
+}
 
 
 
@@ -58,19 +62,15 @@ body{
 	}
 
 	#Column1{
-		position: fixed;
+		position: absolute;
 		width: 200px;
-		background-color: #DDD; 
 		border-radius: 10px;
 	
 	}
 	#profilePic img{
-		width: 200px;
-		border-radius: 20px;
+		width: 194px;
 		display: block;
 		margin-top: 10px;
-		margin-left: auto;
-		margin-right: auto;		
 	}
 	
 	#Column2{
@@ -78,7 +78,5 @@ body{
 		margin-left: 210px;
 		margin-right: 10px;
 		max-width: 990px;
-		background-color: #DDD; 
-		border-radius: 10px;
 	}
 }
