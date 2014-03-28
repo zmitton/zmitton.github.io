@@ -46,6 +46,7 @@ body{
 #Column2{
 	background-color: #DDD; 
 	border-radius: 10px;
+	margin-top: 10px;
 }
 
 p, h1, h2, h3, h4, h5, h6, img{
@@ -71,6 +72,7 @@ p, h1, h2, h3, h4, h5, h6, img{
 		width: 194px;
 		display: block;
 		margin-top: 10px;
+		border-radius: 10px;
 	}
 	
 	#Column2{

@@ -3,7 +3,9 @@ both of these functions return arrays
 =end
 
 def my_array_finding_method(source, thing_to_find)
-    source.select { |word| word =~ /#{thing_to_find}/ ? word : nil } 
+	array = []
+    source.each { |word| word =~ /#{thing_to_find}/ ? array.push(word) : nil }
+    array 
 end
 
 def my_hash_finding_method(source, thing_to_find)
