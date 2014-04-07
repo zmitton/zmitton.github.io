@@ -57,14 +57,24 @@ p{
 	padding-bottom: 15px;
 }
 
+.code-block{
+	padding: 5px 5px 5px 5px;
+	margin: 5px 10px 5px 10px;
+	background-color: #FFF;
+	border-style:solid;
+	border-color:#BBB;
+	border-width:1px;
+	
+}
 data-code{
-	padding: 0px 5px 0px 5px;
+	padding: 1px 5px 2px 5px;
 	background-color: #FFF;
 	border-style:solid;
 	border-color:#BBB;
 	border-width:1px;
 }
-data-code data-comment{
+
+data-comment{
 	color: #BBB;		
 }
 
