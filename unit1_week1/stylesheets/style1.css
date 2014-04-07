@@ -64,7 +64,7 @@ p{
 	border-style:solid;
 	border-color:#BBB;
 	border-width:1px;
-	
+	font-family: "Lucida Console", Monaco, monospace;	
 }
 data-code{
 	padding: 1px 5px 2px 5px;
@@ -72,6 +72,7 @@ data-code{
 	border-style:solid;
 	border-color:#BBB;
 	border-width:1px;
+	font-family: "Lucida Console", Monaco, monospace;	
 }
 
 data-comment{
