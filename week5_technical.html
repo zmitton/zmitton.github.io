@@ -34,10 +34,10 @@
 	</div>
 	<div id="Column2">
 		<div id="classes and scope">
-			<h2>Object Properties and Methods: What types to use and when </h2>
+			<h2>Object Properties and Methods: When to use public and private settings </h2>
 			<h3>Object Methods</h3>
-			<h4>When to set them as private, and when to leave them public</h4>
-			<p>First off, what does making a an class method private even do? Normally, a method defined in a class is available to any object instance of that class. If you make the method private, the instance object can only call the method from <em>within the class definition</em>.</p>  <h4>When to use this?</h4><p>Lets say you have a battleship game. You are defining the class, but other programmers are defining different pieces of the game. You want to make a method that prints the board <data-code>print_board()</data-code> (showing where all the ships were), to display after someone wins the game. You dont want another programmer to accidentally use this in a way that reveals it during the game. You can define that method as private and only call it from the <data-code>game_over()</data-code> method. (a method only called when the game ends).</p>
+			<h4>You can set them as private, or by default they will be public</h4>
+			<p>First off, what does making a an class method private even do? Normally, a method defined in a class is available to any object instance of that class. If you make the method private, the instance object can only call the method from <em>within the class definition</em>.</p><p>In the following example, the print_board method is private. It is being called from this game_over function which is inside the class definition.</p> 
 			
 			<div class="code-block">
 				class Battle_game</br>
@@ -53,11 +53,12 @@
 				&nbsp&nbsp end</br>
 				end</br>
 			</div>
+			 <h4>When to use this?</h4><p>In the battleship game example, let say you are defining the class, but other programmers are defining different pieces of the game. You want to make a method that prints the board <data-code>print_board()</data-code> (showing where all the ships were), to display after someone wins the game. You dont want another programmer to accidentally use this in a way that reveals it during the game. You can define that method as private and only call it from the <data-code>game_over()</data-code> method. (a method only called when the game ends).</p>
 			<p>You really might want to make most of the methods private, and only have a few public ones like <data-code>take_turn()</data-code> and <data-code>display_game_status()</data-code>. </p>
 			
 			
 			<h3>Object properties: When to set them as readable/ writable, and when not to</h3>
-			<p>As with methods, an object's properties have accessibility settings as well. Within a class definition giving an object instance a property is as simple as defining it using an <data-code>@</data-code> symbol. For example <data-code>@num_misses_so_far</data-code>. In ruby, by default, you wont be able to examine or manipulate this property from outside the walls of your class definition. Analogous to the "private" methods we just talked about. I you want to be able to read the property or write to it from the outside you need to add an <data-code>attr</data-code> statement: </p> 
+			<p>As with methods, an object's properties have accessibility settings as well. Within a class definition creating object properties is as simple as defining them using an <data-code>@</data-code> symbol. For example <data-code>@num_misses_so_far</data-code>. In ruby, by default, you wont be able to examine or manipulate this property from outside the walls of your class definition. Analogous to having the "private" setting we just talked about. Only with properties, <em>they are private by default</em>. If you want to be able to read the property or write to it from the outside, you need to add an <data-code>attr</data-code> statement: </p> 
 			<div class = "code-block"> 
 			class Battle_game</br>
 			&nbsp&nbsp attr_reader  :num_misses_so_far<data-comment> # property is publicly readable</data-comment></br>
@@ -65,9 +66,12 @@
 			&nbsp&nbsp attr_accessor  :num_misses_so_far<data-comment> # is publicly readable and writable</data-comment></br>
 			end</br>
 			</div>
+			<p>In practice, you would only ever use one of the three statements above, depending on what kind of access you want.
+			Now you can access this property from anywhere if you have a battle_game_instance: <data-code>battle_game_instance.num_misses_so_far</data-code>.
+			</p>
 			
 			<h3>Class Properties</h3>
-			<p>You can also store variables pertaining to the class itself. They are not specific to an individual instance, and they are often used to store class settings like how many guesses the Battle_game allows <data-code>@@allowed_guesses = 10</data-code>. These variables are always defined within the class using two <data-code>@</data-code> symbols in a row: <data-code>@@</data-code>. Again, by default, the variable cannot be ssen outside of the class definition. To access this variable you must define within the class a "getter" (or "setter"), or a method (usually of the same name) that simply returns the class variable (or sets it). An example of a possible class variable and its getter function for our game might be </p>
+			<p>You can also store variables pertaining to the class itself. They are not specific to an individual instance, and they are often used to store class settings like how many guesses the Battle_game allows <data-code>@@allowed_guesses = 10</data-code>. These variables are always defined within the class using two <data-code>@</data-code> symbols in a row: <data-code>@@</data-code>. Again, by default, the variable cannot be seen outside of the class definition. To access this variable you must define within the class a "getter" (or "setter"): A method usually of the same name that simply returns the class variable (or sets it). An example of a possible class variable and its getter function for our game might be </p>
 			<div class="code-block">
 				class Battle_game</br>
 				&nbsp&nbsp @@allowed_guesses = 10</br></br>
@@ -77,7 +81,7 @@
 				end</br>
 			</div>
 			<p>
-			Accessing this now is done by calling the <data-code>allowed_guesses</data-code> method directly on the class itself like so: <data-code>Battle_game.allowed_guesses</data-code>. 
+			Accessing this now is done by calling the <data-code>allowed_guesses</data-code> method directly on the class itself (not an instance of it) like so: <data-code>Battle_game.allowed_guesses</data-code>. 
 			</p>
 			<h4>Ruby Conventions</h4>
 			<p>There are other languages that just make all these variables and others public by default making development a lot more rapid. There are pros and cons to each way of doing things. Remembering all of this is a bit confusing, but I think it makes programs faster, and less breakable (2 qualities that can be very important when working with large teams, on immense projects). </p>
@@ -86,8 +90,8 @@
 			<p>In an effort to properly use these concepts of private vs public object variables and methods, I decided to make this "battleship like" game. I call it "battleship like" because starting with the game of battleship, I changed the following rules, to make my example program a bit simpler  
 			</p>
 			<ol>
-			<li>Single-pldayer game. you just make guesses against the computer</li>
-			<li>Somputer doesn't take any turns</li>
+			<li>Single-player game. you just make guesses against the computer</li>
+			<li>Computer doesn't take any turns</li>
 			<li>You win by sinking all the computer's ships in <=  10 turns</li>
 			<li>All ships take up just 1 spot</li>
 			</ol>
