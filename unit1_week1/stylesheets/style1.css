@@ -18,7 +18,7 @@ body{
 	border-radius: 10px;
 }
 #externalLinks img{
-	width: 100px;
+	width: 95px;
 	border-radius: 5px;
 }
 
@@ -110,3 +110,4 @@ data-comment{
 		max-width: 990px;
 	}
 }
+/* put the links in a list and add spaces between them; make them anchors and make the whole blog one big page? */
