@@ -33,7 +33,12 @@ data-comment{
 	color: #999;		
 	font-size: 80%;
 }
-  
+
+body{
+  max-width: 800;
+}
+
+
   
   </style>	
 </head>
@@ -59,8 +64,15 @@ data-comment{
 	    </div>
 	  </li>
 	  <li><h2>inject(initial){|memo, obj| block}</h2>
-	    <p>Combines all elements of enum by applying a binary operation, specified by a block or a symbol that names a method or operator. </p>
+	    <p>Takes the optional argument "initial" (default = 0), and a block. Uses the arument as first "memo", then sets memo to whatever the block returns on each iteration. Returns memo.</p>
 	  </li>
+	  <div class="code-block">
+	  a = [5,6,7,8] </br>
+    puts a.inject(10){|memo, obj| </br>
+    &nbsp&nbsp&nbsp&nbspmemo += obj </br>
+    } </br>
+    <data-comment>#=> 36</data-comment>
+    </div>	  
 	  <li><h2>reduce</h2>
 	    <p>see inject</p>
 	  </li>
