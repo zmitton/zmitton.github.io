@@ -1,61 +1,22 @@
-body{
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 0px 2px 2px px;
-	background-color: #200;
-	font-size: 1.3em
-}
+<!--
+emunerales
+each
+each_with_index
+inject(7){|sum, x| sum + x}, reduce(:+)
+map
+collect
+sort, sort_by
+include?
 
-#topHeader{
-	background-color: #DBB; 
-	text-align: center;
-	border-radius: 10px;
-	padding-bottom: 0;
-}
+-->
 
-#externalLinks {
-	border-radius: 10px;
-}
-#externalLinks img{
-	width: 95px;
-	border-radius: 5px;
-}
-
-#bio {
-	border-radius: 10px;
-}
-
-
-#Column1{
-	border-radius: 10px;
-	min-height: 100px
-}
-#Column1 a{
-	text-decoration:none;
-	color: #FFF;
-}
-
-#profilePic img{
-	float: left;
-	width: 100px;
-	border-radius: 50px;	
-}
-
-
-
-#Column2{
-	background-color: #DDD; 
-	border-radius: 10px;
-	margin-top: 10px;
-}
-
-p, h1, h2, h3, h4, h5, h6, img{
-	margin: 3px 3px 3px 3px;
-}
-p{
-	padding-bottom: 15px;
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <style type="text/css">
 
 .code-block{
 	padding: 5px 5px 5px 5px;
@@ -66,48 +27,63 @@ p{
 	border-width:1px;
 	font-family: "Lucida Console", Monaco, monospace;	
 	font-size: 80%;
-}
-data-code{
-	padding: 1px 5px 2px 5px;
-	background-color: #FFF;
-	border-style:solid;
-	border-color:#BBB;
-	border-width:1px;
-	font-family: "Lucida Console", Monaco, monospace;	
-	font-size: 80%;
-}
+}  
 
 data-comment{
 	color: #999;		
 	font-size: 80%;
 }
-
-
-/*big screens override above css*/
-@media only screen and (min-width: 40em) {
-	body{
-		padding: 0px 10px 10px 10px;
-
-	}
-
-	#Column1{
-		position: absolute;
-		width: 200px;
-		border-radius: 10px;
+  
+  
+  </style>	
+</head>
+<body>
+<h1>Ruby Enumerables </h1>
+	<ul>
+	  <li><h2>each{|obj| block}</h2>
+	    <p>Runs once for each item in enumerable. Has access to the current object in each iteration of the block. Does not change the origonal object.</p>
+	    <div class="code-block">
+	    [3,4,5,6].each{|x|  print x }</br>
+	    <data-comment>#=>3 4 5 6</data-comment>
+	    
+	    </div>
+	      
+	  </li>
+	  <li>each_with_index{|obj, index| block}
+	    <p>Does the same thing as "each" but allows for the extra variable "index" to be used within the block. </p>
+	    <div class="code-block">
+	    [3,4,5].each_with_index{|x, i|</br>
+	    &nbsp&nbsp&nbsp&nbspprint "Index #{i} = #{x} ; " </br>
+	    }</br>
+	    <data-comment>#=>Index 0 = 3 ; Index 1 = 4 ; Index 2 = 5 ;</data-comment>
+	    </div>
+	  </li>
+	  <li>inject
+	    <p></p>
+	  </li>
+	  <li>reduce
+	    <p>see inject</p>
+	  </li>
+	  <li>map{|obj| block}
+	    <p>Returns a new array with the results of the block once for each element.  If no block is given an enumerable is returned.<br />
+	      <div class="code-block">(1..6).map{|num| num + 5}  <data-comment>#=> [6,7,8,9,10,11]</data-comment></div>
+	    </p>
+	  </li>
+	  <li>collect
+	    <p>see map</p>
+	  </li>
+	  <li>sort
+	    <p>Returns an array with the items sorted.<br />
+	      <div class="code-block">[3,5,4,7,6].sort <data-comment>=></data-comment></div>
+	    </p>
+	  </li>
+	  <li>include?
+	    <p>Returns true if any member of <em>enum</em> equals ogj.<br />
+	      <div class="code-block">[1,2,3,4,5].include? 5 <data-comment>#=> true</data-comment></div>
+	    </p>
+	  </li>
+	</ul>
 	
-	}
-	#profilePic img{
-		width: 194px;
-		display: block;
-		margin-top: 10px;
-		border-radius: 10px;
-	}
 	
-	#Column2{
-		position: absolute;
-		margin-left: 210px;
-		margin-right: 10px;
-		max-width: 990px;
-	}
-}
-/* put the links in a list and add spaces between them; make them anchors and make the whole blog one big page? */
+</body>
+</html>
