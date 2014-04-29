@@ -16,7 +16,6 @@ include?
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta charset="UTF-8">
 	<title>Document</title>
-
   <script type="text/css">
 
 .code-block{
@@ -41,19 +40,21 @@ data-comment{
 <body>
 <h1>Ruby Enumerables </h1>
 	<ul>
-	  <li><h2>each</h2>
+	  <li><h2>each{|obj| block}</h2>
+	    <p>Runs once for each item in enumerable. Has access to the current object in each iteration of the block. Does not change the origonal object.
+	    </p>
+	    <div class="code-block">
+	    [3,4,5,6].each{|x|  print x }
+	    <data-code>#=>3 4 5 6</data-code>
 	    
-	    
-	  <div class="cade-block"  >
-	  <p class="code-block">put [1,2,3].each{|x| x + 3}</p>
 	    </div>
-	    
+	      
+	      
+	      
+	    </p>
 	  </li>
-	  
 	  <li>each_with_index
-	    
 	    <p></p>
-	    
 	  </li>
 	  <li>inject
 	    <p></p>
@@ -61,8 +62,9 @@ data-comment{
 	  <li>reduce
 	    <p>see inject</p>
 	  </li>
-	  <li>map
-	    <p></p>
+	  <li>map{|obj| block}
+	    <p>Returns a new array with the results of the block once for each element.  If no block is given an enumerable is returned.</p><br /
+	    <div class="code-block">(1..6).map{|num| num + 5}  <data-comment>#=> [6,7,8,9,10,11]</data-comment></div>
 	  </li>
 	  <li>collect
 	    <p>see map</p>
