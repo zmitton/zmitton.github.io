@@ -25,3 +25,7 @@ body{
 	background-color: #DDD;
 	padding: 10px;
 }
+
+ul {
+	list-style: none;
+}
