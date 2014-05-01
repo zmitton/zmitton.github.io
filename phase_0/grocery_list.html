@@ -3,9 +3,14 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <style>
+
 ul {
 	list-style: none;
 }
+body {
+	font-size: 1.5em;
+}
+
 </style>
 
 <script>
@@ -13,9 +18,15 @@ ul {
   var items = [];
   
   function add_item() {
+  
+  if(document.getElementById("added_item_value").value != ""){
     var the_item = document.getElementById("added_item_value").value.charAt(0).toUpperCase() + document.getElementById("added_item_value").value.slice(1) + " ";
     items.push(the_item);
     update_list();
+    document.getElementById("added_item_value").value = "";
+    document.getElementById("added_item_value").focus()
+    }
+    
   }
   
   function delete_item(index) {
@@ -34,14 +45,19 @@ ul {
     
     document.getElementById("list").innerHTML = string;
   }
+  
+window.onload = function() {
+document.getElementById("added_item_value").focus();
+}  
+  
 </script>
 
 
 </head>
 <body>
 
-Add Item: <input id="added_item_value" type="text" name="item_to_add">
-<button onclick="add_item()">Submit</button></br>
+Add Item: <input id="added_item_value" type="text" name="item_to_add" onkeydown="if (event.keyCode == 13) document.getElementById('btn').click()" >
+<button id="btn" onclick="add_item()">Submit</button></br>
   
 <h2>Grocery List</h2>
 <ul id="list"></ul>
