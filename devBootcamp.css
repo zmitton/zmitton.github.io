@@ -177,8 +177,8 @@ data-date{
 		float: left;
 		/*position: absolute;*/
 		/*margin-left: 210px;*/
-		margin-right: 10px;
-		max-width: 990px;
+		/*margin-right: 10px;*/
+		max-width: 1200px;
 	}
 	
 	#Column2 > div{
