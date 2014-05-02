@@ -22,7 +22,6 @@ body{
 }
 
 #home_icon_mobile{
-	background-color: #AAA;
 	border-radius: 20px;
 	width: 25%;
 	float: left;
@@ -30,7 +29,6 @@ body{
 }
 
 #blog_icon_mobile{
-	background-color: #AAA;
 	border-radius: 20px;
 	width: 25%;
 	float: left;
@@ -38,14 +36,12 @@ body{
 }
 
 #head_title_mobile{
-	background-color: #AAA;
 	border-radius: 20px;
 	width: 50%;
 	float: left;
 }
 
 #home_icon{
-	background-color: #AAA;
 	border-radius: 20px;
 	width: 25%;
 	float: left;
@@ -54,7 +50,6 @@ body{
 }
 
 #blog_icon{
-	background-color: #AAA;
 	border-radius: 20px;
 	width: 25%;
 	float: left;
@@ -63,7 +58,6 @@ body{
 }
 
 #head_title{
-	background-color: #AAA;
 	border-radius: 20px;
 	width: 50%;
 	float: left;
@@ -85,11 +79,12 @@ body{
 	border-radius: 10px;
 }
 
-
 #Column1{
-	margin: 15px;
-	border-radius: 10px;
-	min-height: 100px
+	padding: 5px;
+	margin: 10px;
+	min-height: 100px;
+	background-color: #DDD;
+	margin-bottom: 20px;
 }
 #Column1 a{
 	text-decoration:none;
@@ -101,8 +96,6 @@ body{
 	width: 100px;
 	border-radius: 50px;	
 }
-
-
 
 #Column2{
 	background-color: #DDD; 
@@ -122,10 +115,9 @@ ol{
 }
 
 ol li{
-	list-style: none;
 	display: inline;
 	white-space: nowrap;
-	margin-right: 10px;
+	margin-right: 20px;
 }
 
 .code-block{
@@ -138,6 +130,7 @@ ol li{
 	font-family: "Lucida Console", Monaco, monospace;	
 	font-size: 80%;
 }
+
 data-code{
 	padding: 1px 5px 2px 5px;
 	background-color: #FFF;
@@ -153,6 +146,13 @@ data-comment{
 	font-size: 80%;
 }
 
+data-date{
+	color: #666;		
+	font-size: 14px;
+	font-style: italic;
+	white-space: nowrap;	
+}
+
 
 /*big screens override above css*/
 @media only screen and (min-width: 40em) {
@@ -161,12 +161,11 @@ data-comment{
 
 	}
 
-	#Column1{
+	html body #Column1{
 		float: left;
 		/*position: absolute;*/
 		width: 250px;
-		border-radius: 10px;
-	
+		margin-bottom: 10px;
 	}
 	#profilePic img{
 		width: 225px;
@@ -181,6 +180,11 @@ data-comment{
 		margin-right: 10px;
 		max-width: 990px;
 	}
+	
+	#Column2 > div{
+	margin-bottom: 100px;
+	}
+	
 	
 	#topHeader{
 		font-size: 1.5em;
@@ -197,9 +201,6 @@ data-comment{
 	#home_icon, #blog_icon, #head_title{
 		display: inline;
 	}
-
-
-
 
 }
 /* put the links in a list and add spaces between them; make them anchors and make the whole blog one big page? */
