@@ -13,7 +13,7 @@ body{
 	padding-bottom: 0;
 	overflow: auto;
 	white-space: nowrap;
-	font-size: 1em;
+	font-size: 1.2em;
 }
 #topHeader img{
 	width: 46px;
@@ -39,6 +39,8 @@ body{
 	width: 50%;
 	float: left;
 	background-color: #9bd;
+	font-size: .8em;
+
 }
 
 
