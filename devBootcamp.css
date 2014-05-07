@@ -13,7 +13,7 @@ body{
 	padding-bottom: 0;
 	overflow: auto;
 	white-space: nowrap;
-	font-size: 1.2em;
+	font-size: 1em;
 }
 #topHeader img{
 	width: 46px;
@@ -41,6 +41,7 @@ body{
 	background-color: #9bd;
 }
 
+/*
 #home_icon{
 	background-color: #adb;
 	border-radius: 20px;
@@ -66,7 +67,7 @@ body{
 	display: none;
 	background-color: #9bd;
 }
-
+*/
 
 
 
