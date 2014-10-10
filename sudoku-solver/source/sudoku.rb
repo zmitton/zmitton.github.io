@@ -1,5 +1,5 @@
-require 'pry'
-require 'pry-nav'
+#require 'pry'
+#require 'pry-nav'
 
 
 class Object
