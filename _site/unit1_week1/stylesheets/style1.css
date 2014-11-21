@@ -1,0 +1,205 @@
+body{
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px 2px 2px px;
+	background-color: #200;
+	font-size: 1.3em
+}
+
+#topHeader{
+	background-color: #DBB; 
+	text-align: center;
+	border-radius: 10px;
+	padding-bottom: 0;
+	overflow: auto;
+	white-space: nowrap;
+	font-size: 1.2em;
+
+}
+#topHeader img{
+	width: 46px;
+}
+
+#home_icon_mobile{
+	background-color: #AAA;
+	border-radius: 20px;
+	width: 25%;
+	float: left;
+	height: 100%;
+}
+
+#blog_icon_mobile{
+	background-color: #AAA;
+	border-radius: 20px;
+	width: 25%;
+	float: left;
+
+}
+
+#head_title_mobile{
+	background-color: #AAA;
+	border-radius: 20px;
+	width: 50%;
+	float: left;
+}
+
+#home_icon{
+	background-color: #AAA;
+	border-radius: 20px;
+	width: 25%;
+	float: left;
+	height: 100%;
+	display: none;
+}
+
+#blog_icon{
+	background-color: #AAA;
+	border-radius: 20px;
+	width: 25%;
+	float: left;
+	display: none;
+
+}
+
+#head_title{
+	background-color: #AAA;
+	border-radius: 20px;
+	width: 50%;
+	float: left;
+	display: none;
+}
+
+
+
+
+#externalLinks {
+	border-radius: 10px;
+}
+#externalLinks img{
+	width: 95px;
+	border-radius: 5px;
+}
+
+#bio {
+	border-radius: 10px;
+}
+
+
+#Column1{
+	margin: 15px;
+	border-radius: 10px;
+	min-height: 100px
+}
+#Column1 a{
+	text-decoration:none;
+	color: #00a;
+}
+
+#profilePic img{
+	float: left;
+	width: 100px;
+	border-radius: 50px;	
+}
+
+
+
+#Column2{
+	background-color: #DDD; 
+	border-radius: 10px;
+	margin-top: 10px;
+}
+
+p, h1, h2, h3, h4, h5, h6, img{
+	margin: 3px 3px 3px 3px;
+}
+p{
+	padding-bottom: 15px;
+}
+
+ol{
+	padding: 0px;
+}
+
+ol li{
+	list-style: none;
+	display: inline;
+	white-space: nowrap;
+	margin-right: 10px;
+}
+
+.code-block{
+	padding: 5px 5px 5px 5px;
+	margin: 5px 10px 5px 10px;
+	background-color: #FFF;
+	border-style:solid;
+	border-color:#BBB;
+	border-width:1px;
+	font-family: "Lucida Console", Monaco, monospace;	
+	font-size: 80%;
+}
+data-code{
+	padding: 1px 5px 2px 5px;
+	background-color: #FFF;
+	border-style:solid;
+	border-color:#BBB;
+	border-width:1px;
+	font-family: "Lucida Console", Monaco, monospace;	
+	font-size: 80%;
+}
+
+data-comment{
+	color: #999;		
+	font-size: 80%;
+}
+
+
+/*big screens override above css*/
+@media only screen and (min-width: 40em) {
+	body{
+		padding: 0px 10px 10px 10px;
+
+	}
+
+	#Column1{
+		float: left;
+		/*position: absolute;*/
+		width: 250px;
+		border-radius: 10px;
+	
+	}
+	#profilePic img{
+		width: 225px;
+		display: block;
+		border-radius: 10px;
+	}
+	
+	#Column2{
+		float: left;
+		/*position: absolute;*/
+		/*margin-left: 210px;*/
+		margin-right: 10px;
+		max-width: 990px;
+	}
+	
+	#topHeader{
+		font-size: 1.5em;
+	}		
+	
+	#topHeader img{
+		width: 58px;
+	}	
+	
+	#home_icon_mobile, #blog_icon_mobile,  #head_title_mobile{
+		display: none;
+	}
+
+	#home_icon, #blog_icon, #head_title{
+		display: inline;
+	}
+
+
+
+
+}
+/* put the links in a list and add spaces between them; make them anchors and make the whole blog one big page? */

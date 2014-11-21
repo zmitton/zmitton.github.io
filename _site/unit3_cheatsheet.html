@@ -1,0 +1,81 @@
+<!--
+emunerales
+each
+each_with_index
+inject(7){|sum, x| sum + x}, reduce(:+)
+map
+collect
+sort, sort_by
+include?
+
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta charset="UTF-8">
+	<title>Document</title>
+ 	<LINK href="styles/cheatsheet.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div id = "main_div">
+<h1>Ruby Enumerables </h1>
+	<ul>
+	  <li><h2>each{|obj| block}</h2>
+	    <p>Runs once for each item in enumerable. Has access to the current object in each iteration of the block. Does not change the origonal object.</p>
+	    <div class="code-block">
+	    [3,4,5,6].each{|x|  print x }</br>
+	    <data-comment>#=>3 4 5 6</data-comment>
+	    
+	    </div>
+	      
+	  </li>
+	  <li><h2>each_with_index{|obj, index| block}</h2>
+	    <p>Does the same thing as "each" but allows for the extra variable "index" to be used within the block. </p>
+	    <div class="code-block">
+	    [3,4,5].each_with_index{|x, i|</br>
+	    &nbsp&nbsp&nbsp&nbspprint "Index #{i} = #{x} ; " </br>
+	    }</br>
+	    <data-comment>#=>Index 0 = 3 ; Index 1 = 4 ; Index 2 = 5 ;</data-comment>
+	    </div>
+	  </li>
+	  <li><h2>inject(initial){|memo, obj| block}</h2>
+	    <p>Takes the optional argument "initial" (default = 0), and a block. Uses the arument as first "memo", then sets memo to whatever the block returns on each iteration. Returns memo.</p>
+	  </li>
+	  <div class="code-block">
+	  a = [5,6,7,8] </br>
+    puts a.inject(10){|memo, obj| </br>
+    &nbsp&nbsp&nbsp&nbspmemo += obj </br>
+    } </br>
+    <data-comment>#=> 36</data-comment>
+    </div>	  
+	  <li><h2>reduce</h2>
+	    <p>see inject</p>
+	  </li>
+	  <li><h2>map{|obj| block}</h2>
+	    <p>Returns a new array with the results of the block once for each element.  If no block is given an enumerable is returned.<br />
+	      <div class="code-block">(1..6).map{|num| num + 5}  <data-comment>#=> [6,7,8,9,10,11]</data-comment></div>
+	    </p>
+	  </li>
+	  <li><h2>collect</h2>
+	    <p>see map</p>
+	  </li>
+	  <li><h2>sort</h2>
+	    <p>Returns an array with the items sorted.<br />
+	      <div class="code-block">[3,5,4,7,6].sort <data-comment>#=>[3,4,5,6,7]<br/></data-comment>
+	        [b,q,f,e,s].sort <data-comment>#=>[b,e,f,q,s]</data-comment>
+	      </div>
+	    </p>
+	  </li>
+	  <li><h2>include?</h2>
+	    <p>Returns true if any member of <em>enum</em> equals ogj.<br />
+	      <div class="code-block">[1,2,3,4,5].include? 5 <data-comment>#=> true</data-comment></div>
+	    </p>
+	  </li>
+	</ul>
+	
+</div>	
+</body>
+</html>

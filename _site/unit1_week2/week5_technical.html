@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta charset="UTF-8">
+<LINK href="unit1_week1/stylesheets/style1.css" rel="stylesheet" type="text/css">
+
+<title>Zac's GitHub Hosted Blog</title>
+</head>
+<body>
+	<div id="topHeader">
+		<h1>
+			<a href="http://zmitton.github.io/index.html"> <img src="unit1_week1/images/home-icon.png"></a> Zac Mitton
+		</h1>
+	</div>
+	
+	<div id="Column1">
+		<div id="profilePic">
+			<img src="unit1_week1/images/zacMitton.JPG">
+		</div>
+		<div id="mainNav">
+			<h4>
+				<a href="blog1.html"> Week1Blog </a>
+				<a href="week2_technical.html"> Week2TechnicalBlog </a>
+				<a href="week2_cultural_blog.html"> Week2CulturalBlog </a>
+				<a href="week3_technical.html"> Week3TechnicalBlog </a>
+				<a href="week3_cultural_blog.html"> Week3CulturalBlog </a>
+				<a href="week4_technical_blog.html"> Week4TechnicalBlog </a>
+				<a href="week4_cultural_blog.html"> Week4CulturalBlog </a>
+				<a href="week5_technical.html"> Week5TechnicalBlog </a>
+				<a href="week5_cultural_blog.html"> Week5CulturalBlog </a>
+				<a href="week6_technical_blog.html"> Week6TechnicalBlog </a>
+				<a href="week6_cultural_blog.html"> Week6CulturalBlog </a>
+				<a href="week7_technical_blog.html"> Week7TechnicalBlog </a>
+				<a href="week7_cultural_blog.html"> Week7CulturalBlog </a>
+			</h4>
+		</div>
+	</div>
+	<div id="Column2">
+		<div id="classes and scope">
+			<h2>Object Properties and Methods: When to use public and private settings </h2>
+			<h3>Object Methods</h3>
+			<h4>You can set them as private, or by default they will be public</h4>
+			<p>First off, what does making a an class method private even do? Normally, a method defined in a class is available to any object instance of that class. If you make the method private, the instance object can only call the method from <em>within the class definition</em>.</p><p>In the following example, the print_board method is private. It is being called from this game_over function which is inside the class definition.</p> 
+			
+			<div class="code-block">
+				class Battle_game</br>
+				&nbsp&nbsp def game_over (outcome)</br>
+				&nbsp&nbsp&nbsp&nbsp puts "You #{outcome}.\n\n"</br>
+				&nbsp&nbsp&nbsp&nbsp print_board(@computer_board)</br>
+				&nbsp&nbsp end</br></br>
+				&nbsp&nbsp private</br>
+				&nbsp&nbsp def print_board(the_board)</br>
+				&nbsp&nbsp&nbsp&nbsp the_board.each_with_index{|x, i|</br>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp x.each{|y| print y }</br>
+				&nbsp&nbsp&nbsp&nbsp }</br>
+				&nbsp&nbsp end</br>
+				end</br>
+			</div>
+			 <h4>When to use this?</h4><p>In the battleship game example, let say you are defining the class, but other programmers are defining different pieces of the game. You want to make a method that prints the board <data-code>print_board()</data-code> (showing where all the ships were), to display after someone wins the game. You dont want another programmer to accidentally use this in a way that reveals it during the game. You can define that method as private and only call it from the <data-code>game_over()</data-code> method. (a method only called when the game ends).</p>
+			<p>You really might want to make most of the methods private, and only have a few public ones like <data-code>take_turn()</data-code> and <data-code>display_game_status()</data-code>. </p>
+			
+			
+			<h3>Object properties: When to set them as readable/ writable, and when not to</h3>
+			<p>As with methods, an object's properties have accessibility settings as well. Within a class definition creating object properties is as simple as defining them using an <data-code>@</data-code> symbol. For example <data-code>@num_misses_so_far</data-code>. In ruby, by default, you wont be able to examine or manipulate this property from outside the walls of your class definition. Analogous to having the "private" setting we just talked about. Only with properties, <em>they are private by default</em>. If you want to be able to read the property or write to it from the outside, you need to add an <data-code>attr</data-code> statement: </p> 
+			<div class = "code-block"> 
+			class Battle_game</br>
+			&nbsp&nbsp attr_reader  :num_misses_so_far<data-comment> # property is publicly readable</data-comment></br>
+			&nbsp&nbsp attr_writer  :num_misses_so_far<data-comment> #  is publicly writable</data-comment></br>
+			&nbsp&nbsp attr_accessor  :num_misses_so_far<data-comment> # is publicly readable and writable</data-comment></br>
+			end</br>
+			</div>
+			<p>In practice, you would only ever use one of the three statements above, depending on what kind of access you want.
+			Now you can access this property from anywhere if you have a battle_game_instance: <data-code>battle_game_instance.num_misses_so_far</data-code>.
+			</p>
+			
+			<h3>Class Properties</h3>
+			<p>You can also store variables pertaining to the class itself. They are not specific to an individual instance, and they are often used to store class settings like how many guesses the Battle_game allows <data-code>@@allowed_guesses = 10</data-code>. These variables are always defined within the class using two <data-code>@</data-code> symbols in a row: <data-code>@@</data-code>. Again, by default, the variable cannot be seen outside of the class definition. To access this variable you must define within the class a "getter" (or "setter"): A method usually of the same name that simply returns the class variable (or sets it). An example of a possible class variable and its getter function for our game might be </p>
+			<div class="code-block">
+				class Battle_game</br>
+				&nbsp&nbsp @@allowed_guesses = 10</br></br>
+				&nbsp&nbsp def self.allowed_guesses</br>
+				&nbsp&nbsp&nbsp&nbsp  @@allowed_guesses</br>
+				&nbsp&nbsp end</br></br>	
+				end</br>
+			</div>
+			<p>
+			Accessing this now is done by calling the <data-code>allowed_guesses</data-code> method directly on the class itself (not an instance of it) like so: <data-code>Battle_game.allowed_guesses</data-code>. 
+			</p>
+			<h4>Ruby Conventions</h4>
+			<p>There are other languages that just make all these variables and others public by default making development a lot more rapid. There are pros and cons to each way of doing things. Remembering all of this is a bit confusing, but I think it makes programs faster, and less breakable (2 qualities that can be very important when working with large teams, on immense projects). </p>
+			
+			<h3>My Battleship Game</h3>
+			<p>In an effort to properly use these concepts of private vs public object variables and methods, I decided to make this "battleship like" game. I call it "battleship like" because starting with the game of battleship, I changed the following rules, to make my example program a bit simpler  
+			</p>
+			<ol>
+			<li>Single-player game. you just make guesses against the computer</li>
+			<li>Computer doesn't take any turns</li>
+			<li>You win by sinking all the computer's ships in <=  10 turns</li>
+			<li>All ships take up just 1 spot</li>
+			</ol>
+			<p>Take a look at the variables, and methods and try to understand why I gave them the privacy settings (or lack thereof) that I did.</p>
+			<p>Here is a link to the working program on github: <a href ="https://github.com/zmitton/phase_0_unit_2/blob/master/week_5/battleship.rb">Battleship.rb</a></p>
+			<div class="code-block">
+class Battle_game</br></br>
+&nbsp&nbsp
+	attr_reader  :num_misses_so_far , :game_in_progress , :guessing_board <data-comment># readable properties</data-comment></br>&nbsp&nbsp
+	attr_accessor :title <data-comment># this is the only instance property that can be read and written to</data-comment></br>&nbsp&nbsp
+</br>&nbsp&nbsp
+	<data-comment>#  The following variables belong to the class. Here they control game settings</data-comment></br>&nbsp&nbsp
+	@@allowed_guesses = 10 </br>&nbsp&nbsp
+	@@board_length = 4</br>&nbsp&nbsp
+</br>&nbsp&nbsp	
+	def initialize(game_title = "player1's game")</br>&nbsp&nbsp&nbsp&nbsp
+		@title = game_title</br>&nbsp&nbsp&nbsp&nbsp
+		@computer_board = setup_ship_board</br>&nbsp&nbsp&nbsp&nbsp
+		@guessing_board = setup_guessing_board</br>&nbsp&nbsp&nbsp&nbsp
+		@game_in_progress = true</br>&nbsp&nbsp&nbsp&nbsp
+		@num_misses_so_far = 0</br>&nbsp&nbsp
+	end</br>&nbsp&nbsp
+</br>&nbsp&nbsp
+	def take_turn (j,i)</br>&nbsp&nbsp&nbsp&nbsp
+		i = (@@board_length ) - i.to_i</br>&nbsp&nbsp&nbsp&nbsp
+		j = j.downcase.ord-97</br>&nbsp&nbsp&nbsp&nbsp
+		@guessing_board[i][j] =  "X"</br>&nbsp&nbsp&nbsp&nbsp
+		print_guessing_board</br>&nbsp&nbsp&nbsp&nbsp
+		if @computer_board[i][j] == "1"</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			@computer_board[i][j] = "X"</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			game_over("win") if everything_sunk</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			"Hit!!!"</br>&nbsp&nbsp&nbsp&nbsp
+		else</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			@guessing_board[i][j] == "1"</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			@num_misses_so_far += 1</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			game_over("lose") if @num_misses_so_far > 10</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			"Miss"</br>&nbsp&nbsp&nbsp&nbsp
+		end</br>&nbsp&nbsp
+	end</br>&nbsp&nbsp
+</br>&nbsp&nbsp
+	def print_guessing_board</br>&nbsp&nbsp&nbsp&nbsp
+		print_board(@guessing_board)</br>&nbsp&nbsp
+	end</br>&nbsp&nbsp
+</br>&nbsp&nbsp
+</br>&nbsp&nbsp
+	private <data-comment># all methods defined below this will be private</data-comment></br>&nbsp&nbsp
+</br>&nbsp&nbsp
+	def print_board(the_board)</br>&nbsp&nbsp&nbsp&nbsp
+		the_board.each_with_index{|x, i|</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			print "#{@@board_length - i} "</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			x.each{|y| print y }</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			print "\n"</br>&nbsp&nbsp&nbsp&nbsp
+		}</br>&nbsp&nbsp&nbsp&nbsp
+		print "  "</br>&nbsp&nbsp&nbsp&nbsp
+		@@board_length.times{|x| print (x+97).chr.upcase}</br>&nbsp&nbsp&nbsp&nbsp
+		puts "\n"</br>&nbsp&nbsp
+	end</br>&nbsp&nbsp
+</br>&nbsp&nbsp
+	def everything_sunk</br>&nbsp&nbsp&nbsp&nbsp
+		game_is_over = true</br>&nbsp&nbsp&nbsp&nbsp
+		@computer_board.each{|x|</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			x.each{|y| game_is_over = false if y == "1" }</br>&nbsp&nbsp&nbsp&nbsp
+		}</br>&nbsp&nbsp&nbsp&nbsp
+		game_is_over</br>&nbsp&nbsp
+	end</br>&nbsp&nbsp
+</br>&nbsp&nbsp
+	def game_over (outcome)</br>&nbsp&nbsp&nbsp&nbsp
+		puts "You #{outcome}.\n\n"</br>&nbsp&nbsp&nbsp&nbsp
+		@game_in_progress = false</br>&nbsp&nbsp&nbsp&nbsp
+		print_board(@computer_board)</br>&nbsp&nbsp
+	end</br>&nbsp&nbsp
+</br>&nbsp&nbsp
+	def setup_ship_board</br>&nbsp&nbsp&nbsp&nbsp
+		the_board = []</br>&nbsp&nbsp&nbsp&nbsp
+		@@board_length.times{</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			row = []</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			@@board_length.times{ row << ["0","0","1"].sample}</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			the_board << row&nbsp&nbsp&nbsp&nbsp
+		}</br>&nbsp&nbsp&nbsp&nbsp
+		the_board</br>&nbsp&nbsp
+	end</br>&nbsp&nbsp
+</br>&nbsp&nbsp
+	def setup_guessing_board()</br>&nbsp&nbsp&nbsp&nbsp
+		the_board = []</br>&nbsp&nbsp&nbsp&nbsp
+		@@board_length.times{</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			row = []</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			@@board_length.times{ row << 0}</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			the_board << row</br>&nbsp&nbsp&nbsp&nbsp
+		}</br>&nbsp&nbsp&nbsp&nbsp
+		the_board</br>&nbsp&nbsp
+	end</br>
+end</br>
+</br>
+game1 = Battle_game.new()</br>
+puts "\ngame name is #{game1.title}"</br>
+game1.title = "Zac's game"</br>
+puts "game name is now #{game1.title}\n\n"</br>
+</br>
+<data-comment># game1.print_board(game1.guessing_board) # This will not work because the method is private</data-comment></br>
+game1.print_guessing_board <data-comment>#  This works because the method is public (even though this method calls the private one from within itself).</data-comment></br>
+</br>
+</br>
+while game1.game_in_progress</br>&nbsp&nbsp
+	puts "\n#{game1.num_misses_so_far} misses so far\n" <data-comment># This property can be read publicly because of line 3.</data-comment></br>&nbsp&nbsp
+	puts "Enter X coordinate"</br>&nbsp&nbsp
+	x = gets.chomp</br>&nbsp&nbsp
+	puts "Enter Y coordinate"</br>&nbsp&nbsp
+	y = gets.chomp</br>&nbsp&nbsp
+	puts game1.take_turn(x,y)</br>
+end	</br></br>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

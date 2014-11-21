@@ -1,0 +1,27 @@
+
+#pic1{
+position:absolute;
+left:200px;
+top:250px;
+}
+
+#header {
+background:#ddd;
+}
+#main {
+background:#9c9;
+}
+#sidebar {
+background:#c9c;
+}
+.list {
+background:#cc9;
+}
+
+a:hover{
+background:#ddd;
+
+}
+img{
+float:right;
+}

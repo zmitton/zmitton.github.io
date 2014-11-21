@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <script src="jquery-2.1.1.min.js"></script>
+    <script>
+      var factorialize = function(input){
+        var output = 1;
+        for(var countDown = input ; countDown > 0 ; countDown--){
+          output = output * countDown;
+          console.log(output);
+        }
+        return output;
+      }
+
+
+      $(document).ready(function() {
+        $('#factor_button').click(function(){
+          var inputNumber = $('#input_number').val();
+          var output = factorialize(inputNumber);
+          
+          $('#solution_div').html(output);
+          return false;
+        });
+
+      });
+
+    </script>
+  </head>
+  <body>
+    <form>
+      <input id="input_number" type='text'/>
+      <button id="factor_button">Factorialize!</button>
+    </form>
+    <div id="solution_div">nothing yet</div>
+  </body>

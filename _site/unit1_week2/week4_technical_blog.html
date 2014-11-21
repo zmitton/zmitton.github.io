@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta charset="UTF-8">
+<LINK href="unit1_week1/stylesheets/style1.css" rel="stylesheet" type="text/css">
+
+
+<title>Zac's GitHub Hosted Blog</title>
+</head>
+<body>
+	<div id="topHeader">
+		<h1>
+			<a href="http://zmitton.github.io/index.html"> <img src="unit1_week1/images/home-icon.png"></a> Zac Mitton
+		</h1>
+	</div>
+	
+	<div id="Column1">
+		<div id="profilePic">
+			<img src="unit1_week1/images/zacMitton.JPG">
+		</div>
+	
+		<div id="mainNav">
+			<h4>
+				<a href="blog1.html"> Week1Blog </a>
+				<a href="week2_technical.html"> Week2TechnicalBlog </a>
+				<a href="week2_cultural_blog.html"> Week2CulturalBlog </a>
+				<a href="week3_technical.html"> Week3TechnicalBlog </a>
+				<a href="week3_cultural_blog.html"> Week3CulturalBlog </a>
+				<a href="week4_technical_blog.html"> Week4TechnicalBlog </a>
+				<a href="week4_cultural_blog.html"> Week4CulturalBlog </a>
+				<a href="week5_technical.html"> Week5TechnicalBlog </a>
+				<a href="week5_cultural_blog.html"> Week5CulturalBlog </a>
+				<a href="week6_technical_blog.html"> Week6TechnicalBlog </a>
+				<a href="week6_cultural_blog.html"> Week6CulturalBlog </a>
+				<a href="week7_technical_blog.html"> Week7TechnicalBlog </a>
+				<a href="week7_cultural_blog.html"> Week7CulturalBlog </a>
+			</h4>
+		</div>
+	</div>
+	
+	<div id="Column2">
+		<div id="Enumerators">
+			<h2>Enumerators</h2>
+			<p>Some of the most useful functions in ruby are enumerators. They allow the programmer to loop through an array, hash, or numerical set, while and indicate a block of to perform on it. There are many of these enumerator functions, one of the easiest to understand is the <data-code>.map{|item| block }</data-code> function.</br></br>
+			</p>
+			<h3>map and map!</h3>
+			<p>
+			The map function performs the block once for each element in the group calling it. It creates a new array of all the returned values. If the "!" is indicated, the original array itself can be modified.</br></br>
+			</p>
+						<h3>Examples:</h3>
+			<div class= "code-block">
+			array1 = [1,2,3,4,5]</br>
+			array2 = array1.map{|x|</br>
+			&nbsp&nbsp&nbsp&nbsp  x*10</br>
+			}</br>
+			puts array1<data-comment>  # [1, 2, 3, 4, 5]</data-comment></br>
+			puts array2<data-comment>  # [10, 20, 30, 40, 50]</data-comment></br>
+			</div>
+			<p>In the above code the map function multiplies each element of array1 by 10 and outputs them as one new array which we assign to "array2". As you can see from the output array1 remains unchanged </br></br>
+			If the exclamation point is used the original array can itself be modified instead:
+			</p>
+			<div class= "code-block">
+			array1.map!{|x| <data-comment>  # notice the exclamation point this time</data-comment></br>
+			&nbsp&nbsp&nbsp&nbsp  x*10</br>
+			}</br>
+			puts array1<data-comment>  # [10, 20, 30, 40, 50]</data-comment></br>
+			</div>
+			<p>
+			This time the original array "array1" is modified, so there is usually no need for a second array to store the results</br></br>Although the results of this looping method may seem trivial I believe that's sort of the point. Doing this without using <data-code>.map{}</data-code> would take a few extra lines of code and would require a few temporary variables. Similar structures are made over and over by programers. Because of their simplicity, they tend to come up a lot. Having a built in method saves time for the coder, and the reader, while making the code smaller, slightly more efficient, and more elegant.
+			</p>
+			
+			
+		</div>
+	</div>
+
+
+</body>
+</html>

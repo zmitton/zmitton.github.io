@@ -1,0 +1,59 @@
+
+<!doctype html>
+	<html lang="en">
+		<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<style>
+	
+			ul {
+				list-style: none;
+			}
+			body {
+				font-size: 1.5em;
+			}
+	
+		</style>
+	
+		<script>
+
+			var items = [];
+  
+			function add_item() {
+  				var item = document.getElementById("added_item_value");
+				if(item.value != ""){
+    				var the_item = item.value.charAt(0).toUpperCase() + item.value.slice(1) + " ";
+    				items.push(the_item);
+    				update_list();
+    				item.value = "";
+    				item.focus()
+    			}
+			}
+  
+			function delete_item(index) {
+    			items.splice(index, 1);
+    			update_list();
+			}
+  
+			function update_list(){
+
+    			var string = "";
+    			for(i=0; i < items.length ; i++){
+      				string += "<li>" + items[i] + "<button onclick = \"delete_item(" + i + ")\">Delete</button></li>";
+				}
+    			document.getElementById("list").innerHTML = string;
+			}
+  
+			window.onload = function() {
+				document.getElementById("added_item_value").focus();
+			}  
+		</script>
+	</head>
+	<body>
+
+		Add Item: <input id="added_item_value" type="text" name="item_to_add" onkeydown="if (event.keyCode == 13) document.getElementById('btn').click()" >
+		<button id="btn" onclick="add_item()">Submit</button></br>
+  
+		<h2>Grocery List</h2>
+		<ul id="list"></ul>
+	</body>
+</html>
