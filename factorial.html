@@ -1,6 +1,8 @@
 <html>
   <head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>    <script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>    
+
+    <script>
       var factorialize = function(input){
         var output = 1;
         for(var countDown = input ; countDown > 0 ; countDown--){
@@ -10,7 +12,6 @@
         return output;
       }
 
-
       $(document).ready(function() {
         $('#factor_button').click(function(){
           var inputNumber = $('#input_number').val();
@@ -19,7 +20,6 @@
           $('#solution_div').html(output);
           return false;
         });
-
       });
 
     </script>
@@ -29,5 +29,5 @@
       <input id="input_number" type='text'/>
       <button id="factor_button">Factorialize!</button>
     </form>
-    <div id="solution_div">nothing yet</div>
+    <div id="solution_div"></div>
   </body>
