@@ -4,8 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body { 
-      width: 100%;
-      margin: 0;
+      width: 97%;
+      margin: auto;
       background-color: #f0f9FF; 
     }
     input{ width: 100%; }
@@ -172,9 +172,10 @@
         var svg_string = buildQrString(args);
         var canvas = document.getElementById('canvas');
         var length = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-        canvas.style.width = length;
-        canvas.style.height = length;
+        // canvas.style.width = length;
+        // canvas.style.height = length;
         var ctx = canvas.getContext('2d');
+        alert(length);
         ctx.canvas.height = length;
         ctx.canvas.width = length;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -220,7 +221,7 @@
     <div>Gas Price<input type="text" id="gasPrice" value=20000000000></div>
     <div><button onclick="sendEth()">Create Transaction</button></div>
     <h3>Signed Transaction</h3>
-    <canvas id="canvas" style="width:100%;"></canvas>
+    <canvas id="canvas"></canvas>
     <div><textarea id='rawSignedTx' rows=6 cols=40></textarea></div>
     <div id='workflowTx'></div>
     <h2>Show Seed</h2>
